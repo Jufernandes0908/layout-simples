@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- REACT LIBRARY -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <!-- REACT DOM LIBRARY -->
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- BABEL LIBRARY -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <title>Layout React Simples</title>
+</head>
+
+<body>
+  <div id="raiz">Seu APP React vai substituir essa div</div>
+
+  <script type="text/babel">
+    function Cabecalho() {
+      return <h1>Meu Site Incrível</h1>;
+    }
+
+    function ConteudoPrincipal() {
+      return (
+        <main>
+          <p>Bem-vindo ao meu site! Aqui você encontra informações interessantes.</p>
+          <p>Estamos aprendendo React com exemplos práticos direto no navegador.</p>
+        </main>
+      );
+    }
+
+    function Rodape() {
+      return <footer>&copy; 2025 - Todos os direitos reservados.</footer>;
+    }
+
+    function CartaoVisita() {
+      const nome = "Julia Fernandes";
+      const cargo = "Estudante de TI";
+      const email = "julia.gffernandes@email.com";
+
+      return (
+        <div className="cartao-visita">
+          <h2>{nome}</h2>
+          <p>Cargo: {cargo}</p>
+          <p>Email: {email}</p>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <Cabecalho />
+          <CartaoVisita />
+          <ConteudoPrincipal />
+          <Rodape />
+        </>
+      );
+    }
+
+    const elementoDoApp = document.getElementById("raiz");
+    const aplicacao = ReactDOM.createRoot(elementoDoApp);
+    aplicacao.render(<App />);
+  </script>
+</body>
+
+</html>
